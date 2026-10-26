@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -299,7 +300,7 @@ h1 {
     padding-bottom: 50px;
     display: flex;
     flex-direction: column;
-    gap: 8vh;
+    gap: 5vh;
 
 }
 
@@ -899,7 +900,7 @@ h1 {
 
     background: linear-gradient(to right, rgba(175, 47, 47, 0.7) 45%, rgb(201, 240, 6, 0.7));
     border: initial;
-    font-size: 36px;
+    font-size: 45px;
     color: rgb(1, 41, 3);
     text-shadow: 1px 1px 0.2px rgb(228, 216, 127);
     width: 100vw;
@@ -1038,7 +1039,7 @@ h1 {
         align-items: center;
         height: auto;
         width: 20vw;
-        gap: 20px;
+        gap: 3vw;
         /* ← расстояние между кнопками */
         justify-content: center;
     }
@@ -1047,7 +1048,7 @@ h1 {
     .knopki {
         height: 70px;
         /* ← было 60px, стало 70px */
-        width: 60vw;
+        width: 27vw;
         margin: 0;
         padding: 0;
         white-space: nowrap;
@@ -1056,7 +1057,7 @@ h1 {
     }
 
     .knopki a {
-        font-size: 22px;
+        font-size: 19px;
         padding: 0 20px;
     }
 
@@ -1084,11 +1085,10 @@ h1 {
     }
 #nazad {
     width: 35vw;
+            font-size: 2em;
+        text-align: center;
 }
 
-/* .standart_block{
-    height: 50vh;
-} */
 
 }
 
@@ -1179,18 +1179,38 @@ h1 {
 
 }
 
-/* 
-@media (min-width: 450px) and (orientation: landscape) {
-    .standart_block{
-        height: 70vh;
-    }
-}*/
 
-/* Можно комбинировать три и более условий */
 
-/*  
-@media (min-width: 450px)  and (max-width: 1200px) and (orientation: portrait) {
-    .standart_block{
-        height: 40vh;
+
+@media (max-width: 768px) {
+    .wrap-golsh_test,
+    .wrap-mir_test,
+    .wrap-nesvig_test,
+    .wrap-lida_test,
+    .wrap-ruga_test,
+    .wrap-pisa_test,
+    .wrap-sobor_test,
+    .wrap-chapa_test,
+    .wrap-vishnya_test,
+    .wrap-rum_test,
+    .wrap-kozel_test,
+    .wrap-got_test,
+    .wrap-krevo_test,
+    .wrap-smola_test,
+    .wrap-sofia_test,
+    .wrap-spasi_test,
+    .wrap-tiser_test,
+    .wrap-bihov_test,
+    .wrap-bulka_test,
+    .wrap-potop_test,
+    .wrap-bobr_test,
+    .wrap-visa_test,
+    .wrap-kos_test,
+    .wrap-brest_test {
+    
+      
+        background-attachment: scroll; /* Убираем фиксацию */
+        background-size: cover;        /* Картинка растягивается на весь блок */
+        background-position: center;   /* Центрируем картинку */
     }
-} */
+    }
