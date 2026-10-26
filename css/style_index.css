@@ -5,7 +5,7 @@
 }
 
 html {
-    font-size: clamp(12px, 1.2vw, 25px);
+    font-size: clamp(10px, 1.2vw, 25px);
     /* задаю плавающий размер шрифта: самый маленький 12px, самый стандартный для всего 1.2vw, и не больше 25px */
 }
 
@@ -95,7 +95,7 @@ html {
 }
 
 h1.centerText {
-    height: 30vh;
+    height: 25vh;
 
     align-items: center;
     color: red;
@@ -192,7 +192,7 @@ h1.centerText {
 }
 
 
-.obl:hover,
+
 .obl.car-touch {
     transform: scale(1.05);
     transition: all 1s;
@@ -200,6 +200,23 @@ h1.centerText {
 
 
 }
+
+/* чтобы hover не залипал на пальцах при касании когда нет мышки у устройств */
+
+@media (hover: hover) and (pointer: fine) {
+.obl:hover{
+     transform: scale(1.05);
+    transition: all 1s;
+    box-shadow: 0 0 25px 3px #fff;
+}
+
+
+.obl:hover p
+{
+    color: white;
+    font-size: 1.4em;
+    transition: all 1s;
+}}
 
 
 
@@ -330,4 +347,255 @@ h1.centerText {
     }
 
 
+}
+
+
+
+
+
+
+@keyframes car2 {
+    0% {
+        top: -7vh;
+        left: -5vh;
+        transform: rotate(0deg);
+    }
+
+    3% {
+        top: -7vh;
+        left: -5vh;
+        transform: rotate(90deg);
+    }
+
+    24% {
+        top: -7vh;
+        left: calc(90vw - 13vh);
+        transform: rotate(90deg);
+    }
+
+    26% {
+        top: -7vh;
+        left: calc(90vw - 13vh);
+        transform: rotate(180deg);
+    }
+
+    46% {
+        top: 39.5vh;
+        left: calc(90vw - 13vh);
+        transform: rotate(180deg);
+    }
+
+    50% {
+        top: 39.5vh;
+        left: calc(90vw - 13vh);
+        transform: rotate(270deg);
+    }
+
+    72% {
+        top: 39.5vh;
+        left: -4vh;
+        transform: rotate(270deg);
+    }
+
+    75% {
+        top: 39.5vh;
+        left: -4vh;
+        transform: rotate(360deg);
+    }
+
+
+    100% {
+        top: -9vh;
+        left: -4vh;
+        transform: rotate(360deg);
+    }
+
+
+}
+
+
+
+
+   
+/* 1. Планшеты и небольшие экраны (до 1032px) */
+@media (max-width: 1032px) {
+    .obl {
+        height: 14vh;
+        width: 24vw;
+        font-size: 2em;
+    }
+
+    .car {
+        animation: car2 15s linear infinite;
+        height: 14vh;
+        width: 7vh;
+    }
+}
+
+/* 2. Планшеты в вертикальном положении (до 1024px) */
+@media (max-width: 1024px) {
+    html {
+        font-size: clamp(10px, 1.2vw, 25px);
+    }
+
+    .p_wrap {
+        padding-left: 1.3vw;
+    }
+
+    .doroga2::before {
+        content: '';
+        position: absolute;
+        inset: -5vh;
+    }
+
+    .doroga2 {
+        height: 46vh;
+        width: calc(90vw - 10vh);
+        border: 5vh solid rgb(53, 51, 51);
+    }
+
+    .doroga1 {
+        height: 56vh;
+        border: 5vh solid rgb(53, 51, 51);
+    }
+
+    .doroga2_skruglenie {
+        height: 34vh;
+        width: calc(90vw - 10vh - 10vh);
+        border: 1px solid rgb(53, 51, 51);
+    }
+
+    .roditel_obl1 {
+        height: 50%;
+        width: 90vw;
+        top: -5vh;
+    }
+
+    h1.centerText {
+        font-size: 2em;
+    }
+
+    .ex {
+        height: 11vh;
+    }
+
+    .obl {
+        height: 11vh;
+        width: 14vw;
+    }
+
+    .roditel_obl1>a,
+    .obl_wr>a {
+        text-decoration: none;
+        display: inline-block;
+        height: 11vh;
+    }
+
+    .ex2 {
+        height: 11vh;
+    }
+
+    .roditel_obl2 {
+        bottom: -5vh;
+    }
+}
+
+/* 3. Планшеты (до 1024px в ширину и 768px в высоту) */
+@media (max-width: 1024px) and (max-height: 768px) {
+    .obl {
+        font-size: 1.5em;
+        height: 11vh;
+        width: 18vw;
+    }
+}
+
+/* 4. Surface Pro и похожие (до 960px) */
+@media (max-width: 960px) and (max-height: 1440px) {
+    .centerText {
+        height: 25vh !important;
+        font-size: 3em !important; /* Увеличил шрифт, чтобы был крупнее */
+        
+    }
+}
+
+/* 5. Большие телефоны и маленькие планшеты (до 960px) */
+@media (max-width: 960px) {
+    .obl {
+        font-size: 1em;
+        height: 11vh;
+        width: 18vw;
+    }
+}
+
+/* 6. Телефоны (до 768px) */
+@media (max-width: 768px) {
+    .obl {
+        font-size: 1.2em;
+    }
+
+    .centerText {
+        height: 25vh !important;
+        font-size: 2.5em !important;
+       
+    }
+}
+
+/* 7. Маленькие телефоны (до 440px) */
+@media (max-width: 440px) {
+    .obl {
+        font-size: 1em;
+        height: 11vh;
+        width: 18vw;
+    }
+
+    .centerText {
+        height: 25vh !important;
+        font-size: 2.5em !important;
+      
+    }
+}
+
+/* ========================================================= */
+/* СПЕЦИАЛЬНЫЕ ЗАПРОСЫ ДЛЯ ГОРИЗОНТАЛЬНЫХ ТЕЛЕФОНОВ (LANDSCAPE) */
+/* Они должны идти в самом конце, чтобы перебивать всё остальное */
+/* ========================================================= */
+
+@media (max-width: 968px) and (max-height: 412px) {
+    .obl {
+        font-size: 1em;
+        height: 11vh;
+        width: 14vw;
+    }
+}
+
+@media (max-width: 956px) and (max-height: 440px) {
+    .obl {
+        font-size: 1em;
+        height: 11vh;
+        width: 15vw;
+    }
+}
+
+@media (max-width: 924px) and (max-height: 412px) {
+    .obl {
+        font-size: 1em;
+        height: 11vh;
+        width: 15vw;
+    }
+}
+
+@media (max-width: 852px) and (max-height: 393px) {
+    .obl {
+        font-size: 1em;
+        height: 11vh;
+        width: 15vw;
+    }
+}
+
+@media (max-width: 667px) and (max-height: 375px) {
+    .obl {
+        font-size: 1em;
+        height: 11vh;
+        width: 15vw;
+    }
 }
